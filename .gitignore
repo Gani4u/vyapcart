@@ -1,0 +1,110 @@
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+# Java
+target/
+*.class
+
+# Maven
+.mvn/wrapper/maven-wrapper.jar
+
+# Spring Boot
+application-local.properties
+application-prod.properties
+.env
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Node (future frontend)
+node_modules/
+
+# Docker volumes
+infra/docker/data/
+
+
+# ===============================
+# OS / System
+# ===============================
+.DS_Store
+Thumbs.db
+
+# ===============================
+# IDE
+# ===============================
+.idea/
+.vscode/
+*.iml
+
+# ===============================
+# Java / Backend
+# ===============================
+backend/target/
+backend/.mvn/
+backend/*.log
+
+# ===============================
+# Node / Frontend
+# ===============================
+**/node_modules/
+**/npm-debug.log*
+**/yarn.lock
+
+# ===============================
+# React Native
+# ===============================
+**/android/.gradle/
+**/android/app/build/
+**/ios/Pods/
+**/ios/build/
+
+# ===============================
+# Docker
+# ===============================
+infra/docker/data/
+
+# ===============================
+# Env
+# ===============================
+.env
+.env.*
