@@ -1,102 +1,63 @@
-HELP.md
-target/
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# ===============================
+# OS
+# ===============================
+.DS_Store
+Thumbs.db
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
+# ===============================
+# IDEs
+# ===============================
+.idea/
+.vscode/
 *.iml
 *.ipr
+*.iws
+.classpath
+.project
+.settings/
+.factorypath
+.sts4-cache/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+# ===============================
+# Java / Maven / Spring Boot
+# ===============================
+**/target/
+**/*.class
+**/*.log
+**/.mvn/wrapper/maven-wrapper.jar
 
-### VS Code ###
-.vscode/
-# Java
-target/
-*.class
-
-# Maven
-.mvn/wrapper/maven-wrapper.jar
-
-# Spring Boot
+# Spring profiles / secrets
 application-local.properties
 application-prod.properties
 .env
-
-# Logs
-logs/
-*.log
-
-# OS
-.DS_Store
-Thumbs.db
-
-# IDE
-.idea/
-.vscode/
-*.iml
-
-# Node (future frontend)
-node_modules/
-
-# Docker volumes
-infra/docker/data/
-
+.env.*
 
 # ===============================
-# OS / System
-# ===============================
-.DS_Store
-Thumbs.db
-
-# ===============================
-# IDE
-# ===============================
-.idea/
-.vscode/
-*.iml
-
-# ===============================
-# Java / Backend
-# ===============================
-backend/target/
-backend/.mvn/
-backend/*.log
-
-# ===============================
-# Node / Frontend
+# Node / JavaScript
 # ===============================
 **/node_modules/
 **/npm-debug.log*
-**/yarn.lock
+**/yarn-error.log
 
 # ===============================
 # React Native
 # ===============================
+# Android
 **/android/.gradle/
 **/android/app/build/
+**/android/build/
+**/local.properties
+**/*.keystore
+!**/debug.keystore
+
+# iOS
 **/ios/Pods/
 **/ios/build/
+**/DerivedData/
+**/*.xcuserstate
+
+# Metro
+.metro-health-check*
 
 # ===============================
 # Docker
@@ -104,7 +65,19 @@ backend/*.log
 infra/docker/data/
 
 # ===============================
-# Env
+# Test / Coverage
 # ===============================
-.env
-.env.*
+coverage/
+
+# ===============================
+# Fastlane
+# ===============================
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots
+**/fastlane/test_output
+
+# ===============================
+# Bundles
+# ===============================
+*.jsbundle
