@@ -49,6 +49,8 @@ application-prod.properties
 **/local.properties
 **/*.keystore
 !**/debug.keystore
+# Android native build cache
+**/android/app/.cxx/
 
 # iOS
 **/ios/Pods/
@@ -81,3 +83,9 @@ coverage/
 # Bundles
 # ===============================
 *.jsbundle
+
+# VS Codegit status
+.vscode/
+
+# Spring secrets
+backend/src/main/resources/application.properties
