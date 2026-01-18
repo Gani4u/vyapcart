@@ -1,45 +1,36 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React, { useEffect, useState } from 'react';
+import { View, Text } from 'react-native';
+import { getProducts } from './src/api/catalog.api';
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+export default function App() {
+  const [status, setStatus] = useState('Connecting...');
+  const [products, setProducts] = useState<string[]>([]);
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
-    </SafeAreaProvider>
-  );
-}
-
-function AppContent() {
-  const safeAreaInsets = useSafeAreaInsets();
+  useEffect(() => {
+    getProducts()
+      .then(res => {
+        setProducts(res.data);
+        setStatus('✅ Backend connected');
+      })
+      .catch(err => {
+        console.error(err);
+        setStatus('❌ Backend NOT connected');
+      });
+  }, []);
 
   return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
+    <View style={{ padding: 20 }}>
+      <Text style={{ fontSize: 18, fontWeight: 'bold' }}>
+        Vyapkart App
+      </Text>
+
+      <Text style={{ marginTop: 10 }}>
+        {status}
+      </Text>
+
+      {products.map(item => (
+        <Text key={item}>• {item}</Text>
+      ))}
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
-export default App;
