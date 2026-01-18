@@ -81,3 +81,11 @@ coverage/
 # Bundles
 # ===============================
 *.jsbundle
+
+# VS Codegit status
+**/.vscode/
+ 
+# Spring secrets
+backend/src/main/resources/application.properties
+# Android native build cache
+**/android/app/.cxx/
