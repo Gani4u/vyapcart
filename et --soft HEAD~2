@@ -1,0 +1,20 @@
+[33m7bf0c9b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/backend[m[33m)[m feat: added Auth flow
+[33mf667ea1[m feat: added the JWT auth which connects firebase
+[33md087cbc[m[33m ([m[1;31morigin/feature/docker_manoj[m[33m, [m[1;31morigin/feature/backend[m[33m, [m[1;31morigin/feature/auth[m[33m, [m[1;31morigin/develop[m[33m, [m[1;32mdevelop[m[33m)[m Merge branch 'main' into develop
+[33m26b5253[m Merge branch 'develop' of https://github.com/Gani4u/vyapcart into develop
+[33m4c4c2a3[m feat: implement backend API and frontend integration for product catalog and authentication
+[33macf31fe[m[33m ([m[1;31morigin/akshayg[m[33m, [m[1;32mmain[m[33m)[m first commit from akshay
+[33m845e67b[m Merge pull request #6 from Gani4u/develop
+[33mb01ff89[m[33m ([m[1;31morigin/feature/infra[m[33m)[m chore: add comment for Kali Linux in BackendApplicationTests
+[33m9f8801b[m Merge pull request #5 from Gani4u/develop
+[33m6531a49[m Merge branch 'main' into develop
+[33m04625b3[m feat: initialize VyapkartMobile project with package.json and TypeScript configuration
+[33m674e50d[m Merge pull request #4 from Gani4u/develop
+[33m4638d77[m Merge pull request #3 from Gani4u/feature/backend
+[33m8d233a8[m Remove frontend mobile application files and technical documentation
+[33mff3dbed[m Merge branch 'develop' into feature/backend
+[33mb13c9d0[m feat: initialize VyapkartMobile project with package.json and tsconfig.json
+[33m73d7ad8[m Merge pull request #2 from Gani4u/develop
+[33md2652ba[m Merge pull request #1 from Gani4u/feature/backend
+[33m25bd058[m chore: update .gitignore, modify VS Code settings, and add technical documentation
+[33m76c0632[m chore: initial Vyapkart project structure

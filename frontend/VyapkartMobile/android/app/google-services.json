@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "225630436001",
+    "project_id": "vyapkart-test",
+    "storage_bucket": "vyapkart-test.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:225630436001:android:c5857fc5818fe4bb098ee0",
+        "android_client_info": {
+          "package_name": "com.vyapkartmobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGFnIpGcm-8mSKRH3pWnyWq2nRSP2v2Uo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
