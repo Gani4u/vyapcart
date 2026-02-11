@@ -1,8 +1,7 @@
 package com.vyapkart.catalog;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -11,6 +10,7 @@ import java.util.List;
 public class CatalogController {
 
     @GetMapping("/products")
+    @PreAuthorize("hasRole('BUYER')")
     public List<String> getProducts() {
         return List.of(
                 "Apple",

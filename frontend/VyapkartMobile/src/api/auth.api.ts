@@ -1,3 +1,4 @@
+// /src/auth/api.ts
 import { apiClient } from './client';
 import { ENDPOINTS } from './endpoints';
 
@@ -7,4 +8,8 @@ export const login = (payload: { phone: string }) => {
 
 export const verifyOtp = (payload: { phone: string; otp: string }) => {
   return apiClient.post(ENDPOINTS.AUTH.OTP, payload);
+};
+
+export const syncFirebaseUser = () => {
+  return apiClient.post('/auth/firebase');
 };

@@ -1,3 +1,4 @@
+// /src/api/ENDPOINTS.ts
 export const ENDPOINTS = {
   AUTH: {
     LOGIN: '/auth/login',
