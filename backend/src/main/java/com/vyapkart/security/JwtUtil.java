@@ -1,26 +1,65 @@
 package com.vyapkart.security;
 
+import com.vyapkart.user.entity.User;
+import com.vyapkart.user.entity.Role;
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
+import io.jsonwebtoken.security.SecureDigestAlgorithm;
+import io.jsonwebtoken.io.Decoders;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.security.Key;
 import java.util.Date;
+import java.util.List;
 
-@Component // ⭐ THIS IS THE FIX
+@Component
 public class JwtUtil {
 
-    private final String SECRET_KEY = "WNi3oF3NfduzvwUiOPlnDdUUjIlMcv7fX28ms3udpPM="; // move to env later
-    private final long EXPIRATION_TIME = 1000 * 60 * 60 * 24; // 24 hrs
+    @Value("${app.jwt.secret}")
+    private String secretKey;
 
-    public String generateToken(String userId, String email, String role) {
+    @Value("${app.jwt.expiration}")
+    private long expirationTime;
 
-    return Jwts.builder()
-            .setSubject(userId)
-            .claim("email", email)
-            .claim("role", role)
-            .setIssuedAt(new Date())
-            .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
-            .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
-            .compact();
-}
+    /* =========================
+       CREATE SIGNING KEY
+    ========================== */
+    private Key getSigningKey() {
+        byte[] keyBytes = Decoders.BASE64.decode(secretKey);
+        return Keys.hmacShaKeyFor(keyBytes);
+    }
+
+    /* =========================
+       GENERATE TOKEN
+    ========================== */
+    public String generateToken(User user) {
+
+        List<String> roles = user.getRoles()
+                .stream()
+                .map(Role::getName)
+                .toList();
+
+        return Jwts.builder()
+                .subject(String.valueOf(user.getId()))
+                .claim("email", user.getEmail())
+                .claim("roles", roles)
+                .issuedAt(new Date())
+                .expiration(new Date(System.currentTimeMillis() + expirationTime))
+                .signWith(getSigningKey())
+                .compact();
+    }
+
+    /* =========================
+       EXTRACT CLAIMS
+    ========================== */
+    public Claims extractClaims(String token) {
+
+        return Jwts.parser()
+                .verifyWith((javax.crypto.SecretKey) getSigningKey())
+                .build()
+                .parseSignedClaims(token)
+                .getPayload();
+    }
 }

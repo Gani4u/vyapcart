@@ -12,6 +12,12 @@ import lombok.*;
 @Builder
 public class UserRole {
 
+    public UserRole(User user, Role role) {
+    this.id = new UserRoleId(user.getId(), role.getId());
+    this.user = user;
+    this.role = role;
+    }
+
     @EmbeddedId
     private UserRoleId id;
 

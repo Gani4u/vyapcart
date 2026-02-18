@@ -31,7 +31,7 @@ public class UserService {
                     User user = User.builder()
                             .firebaseUid(firebaseUid)
                             .email(email)
-                            .status("ACTIVE")
+                            .status(UserStatus.ACTIVE)
                             .build();
 
                     userRepository.save(user);
