@@ -2,6 +2,8 @@
 export const ENDPOINTS = {
   AUTH: {
     LOGIN: '/auth/login',
+    REGISTER: '/auth/register',
+    FIREBASE_LOGIN: '/auth/firebase-login',
     OTP: '/auth/otp',
   },
 
