@@ -33,7 +33,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/auth/**").permitAll()
                         .requestMatchers("/actuator/**").permitAll()
+                        .requestMatchers("/pincode/**").permitAll()
                         .requestMatchers("/catalog/**").authenticated()
+                        .requestMatchers("/seller/**").authenticated()
                         .anyRequest().authenticated()
                 )
 

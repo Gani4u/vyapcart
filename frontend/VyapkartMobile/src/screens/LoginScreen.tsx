@@ -95,6 +95,7 @@ export default function LoginScreen({ navigation }: any) {
         fullName: authData.fullName,
         phone: authData.phone,
         roles: authData.roles,
+        sellerStatus: authData.sellerStatus || null,
       });
 
       console.log('✅ Login successful');
@@ -102,8 +103,8 @@ export default function LoginScreen({ navigation }: any) {
 
       Alert.alert('Success', `Welcome ${authData.fullName || 'User'}!`);
 
-      // Navigate to home - the AppNavigator will handle role-based navigation
-      navigation.navigate('Home');
+      // No navigation needed - RootNavigator will automatically switch to AppNavigator
+      // when it detects the user is authenticated
     } catch (error: any) {
       Alert.alert('Login Failed', error.message);
     } finally {

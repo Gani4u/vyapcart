@@ -237,13 +237,23 @@ public class AuthService {
                 .map(Role::getName)
                 .toList();
 
+        // Get seller status if user is a seller
+        String sellerStatus = null;
+        if (roles.contains("SELLER")) {
+            Optional<Seller> seller = sellerRepository.findByUserId(user.getId());
+            if (seller.isPresent()) {
+                sellerStatus = seller.get().getStatus().toString();
+            }
+        }
+
         return new AuthResponse(
                 user.getId(),
                 user.getEmail(),
                 user.getFullName(),
                 user.getPhone(),
                 roles,
-                token
+                token,
+                sellerStatus
         );
     }
 

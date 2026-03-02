@@ -4,6 +4,7 @@ import com.vyapkart.user.entity.User;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
@@ -38,6 +39,15 @@ public class Seller {
 
     @Column(name = "rejected_reason", columnDefinition = "TEXT")
     private String rejectedReason;
+
+    @Column(name = "latitude", precision = 10, scale = 8)
+    private BigDecimal latitude;
+
+    @Column(name = "longitude", precision = 11, scale = 8)
+    private BigDecimal longitude;
+
+    @Column(name = "delivery_radius_km")
+    private Integer deliveryRadiusKm = 10;
 
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;

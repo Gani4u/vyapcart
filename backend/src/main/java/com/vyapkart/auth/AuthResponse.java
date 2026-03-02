@@ -10,6 +10,7 @@ public class AuthResponse {
     private String phone;
     private List<String> roles;
     private String token;
+    private String sellerStatus; // null for buyers, 'PENDING'/'APPROVED'/'REJECTED' for sellers
 
     // ===== CONSTRUCTORS =====
     public AuthResponse() {
@@ -22,6 +23,17 @@ public class AuthResponse {
         this.phone = phone;
         this.roles = roles;
         this.token = token;
+        this.sellerStatus = null;
+    }
+
+    public AuthResponse(Long userId, String email, String fullName, String phone, List<String> roles, String token, String sellerStatus) {
+        this.userId = userId;
+        this.email = email;
+        this.fullName = fullName;
+        this.phone = phone;
+        this.roles = roles;
+        this.token = token;
+        this.sellerStatus = sellerStatus;
     }
 
     // ===== GETTERS & SETTERS =====
@@ -71,5 +83,13 @@ public class AuthResponse {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public String getSellerStatus() {
+        return sellerStatus;
+    }
+
+    public void setSellerStatus(String sellerStatus) {
+        this.sellerStatus = sellerStatus;
     }
 }
