@@ -11,6 +11,7 @@ export interface UserData {
   fullName?: string | null;
   phone?: string | null;
   roles: string[];
+  sellerStatus?: string | null; // 'PENDING', 'APPROVED', 'REJECTED' for sellers, null for buyers
 }
 
 export interface RegistrationData {

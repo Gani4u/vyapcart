@@ -46,3 +46,10 @@ export const register = (payload: {
 export const verifyOtp = (payload: { phone: string; otp: string }) => {
   return apiClient.post(ENDPOINTS.AUTH.OTP, payload);
 };
+
+/**
+ * Get current user info (including seller status)
+ */
+export const getCurrentUser = () => {
+  return apiClient.get(ENDPOINTS.USER.PROFILE);
+};
